@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author                = { "Pavel Gre4ixin" => "pav.gre4ixin@yandex.ru" }
   s.ios.deployment_target = "11.0"
   s.source                = { :git => "https://github.com/gre4ixin/GSwitcher.git", :tag => s.version.to_s }
-  s.source_files          = "Sources/*.swift"
+  s.source_files          = "GSwitcher/Classes/*.swift"
   s.frameworks             = "UIKit"
   s.swift_version = '4.2'
   
