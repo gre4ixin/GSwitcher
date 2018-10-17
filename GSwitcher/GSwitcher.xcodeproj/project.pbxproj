@@ -74,7 +74,7 @@
 		65F054062177CFAD00CE5BAF /* GSwitcher */ = {
 			isa = PBXGroup;
 			children = (
-				65F054232177D47900CE5BAF /* Classes */,
+				65F054232177D47900CE5BAF /* Sources */,
 				65F054072177CFAD00CE5BAF /* GSwitcher.h */,
 				65F054082177CFAD00CE5BAF /* Info.plist */,
 			);
@@ -90,12 +90,12 @@
 			path = GSwitcherTests;
 			sourceTree = "<group>";
 		};
-		65F054232177D47900CE5BAF /* Classes */ = {
+		65F054232177D47900CE5BAF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				65F054202177CFD900CE5BAF /* GSwitcher.swift */,
 			);
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
