@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.author                = { "Pavel Gre4ixin" => "pav.gre4ixin@yandex.ru" }
   s.platform              = :ios, '11.0'
   s.source                = { :git => "https://github.com/gre4ixin/GSwitcher.git", :tag => s.version.to_s }
-  s.source_files          = 'Classes/*.{h,m}'
-  s.public_header_files   = 'Classes/*.h'
+  s.source_files          = 'GSwitcher/GSwitcher/GSwitcher/Classes/*'
+  s.public_header_files   = 'GSwitcher/GSwitcher/GSwitcher/Classes/*.h'
   s.framework             = 'UIKit'
   s.requires_arc          = true
 end
