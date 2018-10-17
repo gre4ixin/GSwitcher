@@ -10,4 +10,6 @@ Pod::Spec.new do |s|
   s.source                = { :git => "https://github.com/gre4ixin/GSwitcher.git", :tag => s.version.to_s }
   s.source_files          = "Sources/*.swift"
   s.frameworks             = "UIKit"
+  s.swift_version = '4.2'
+  
 end
