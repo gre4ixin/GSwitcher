@@ -14,22 +14,22 @@ public enum GSwitcherState {
 }
 
 public protocol GSwitcherDelegate {
-    func switcherDidChangeValue(_ switch: GSwitcher, value: GSwitcherState)
+    func switcherDidChangeValue(_ switcher: GSwitcher, value: GSwitcherState)
 }
 
 public class GSwitcher: UIView {
     
-    var button: UIButton!
-    var buttonLeftConstraint: NSLayoutConstraint!
-    var delegate: GSwitcherDelegate?
+    private var button: UIButton!
+    private var buttonLeftConstraint: NSLayoutConstraint!
+    public var delegate: GSwitcherDelegate?
     
     @IBInspectable var titleWithLeftPosition: String = ""
-    @IBInspectable var titleWithRightPosition: String = ""
-    @IBInspectable var on: Bool = false
-    @IBInspectable var originalImage:UIImage?
-    @IBInspectable var selectedImage:UIImage?
-    @IBInspectable var selectedColor:UIColor = UIColor(red: 0/255.0, green: 150/255.0, blue: 136/255.0, alpha: 1)
-    @IBInspectable var originalColor:UIColor = UIColor(red: 237/255.0, green: 28/255.0, blue: 36/255.0, alpha: 1)
+    @IBInspectable public var titleWithRightPosition: String = ""
+    @IBInspectable public var on: Bool = false
+    @IBInspectable public var originalImage:UIImage?
+    @IBInspectable public var selectedImage:UIImage?
+    @IBInspectable public var selectedColor:UIColor = UIColor(red: 0/255.0, green: 150/255.0, blue: 136/255.0, alpha: 1)
+    @IBInspectable public var originalColor:UIColor = UIColor(red: 237/255.0, green: 28/255.0, blue: 36/255.0, alpha: 1)
     
     private var offCenterPosition: CGFloat!
     private var onCenterPosition: CGFloat!
@@ -82,7 +82,7 @@ public class GSwitcher: UIView {
         button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1.8).isActive = true
     }
     
-    func setImages(onImage:UIImage? , offImage :UIImage?) {
+    public func setImages(onImage:UIImage? , offImage :UIImage?) {
         button.setImage(offImage, for: .normal)
         button.setImage(onImage, for: .selected)
     }
@@ -91,13 +91,13 @@ public class GSwitcher: UIView {
         super.init(coder: aDecoder)
     }
     
-    @objc func switcherButtonTouch(_ sender: AnyObject) {
+    @objc private func switcherButtonTouch(_ sender: AnyObject) {
         on = !on
         animationSwitcherButton()
         delegate?.switcherDidChangeValue(self, value: on ? .right : .left)
     }
     
-    func animationSwitcherButton() {
+    private func animationSwitcherButton() {
         if on == true {
             
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIView.AnimationOptions.curveEaseInOut, animations: { () -> Void in
